@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest - News Blog</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-yellow-50">
+    <!-- Header -->
+    <header class="bg-yellow-400 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                    </svg>
+                    <h1 class="text-2xl font-bold">Daily Digest By Clearit</h1>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <button class="category-filter hover:text-yellow-800 transition-colors" data-category="all" onclick="navClick('Education')">Education</button>
+                    <button class="category-filter hover:text-yellow-800 transition-colors" data-category="all" onclick="navClick('Technology')">Science and Technology</button>
+                    <button class="category-filter hover:text-yellow-800 transition-colors" data-category="all" onclick="navClick('Finance')">Finance</button>
+                    
+                    <button class="category-filter hover:text-yellow-800 transition-colors" data-category="Environment" onclick="navClick('jobs')">Job and Career</button>
+                    <button class="category-filter hover:text-yellow-800 transition-colors" data-category="Healthcare" onclick="navClick('Healthcare')">Healthcare</button>
+                    
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="cards-container" id="cards-container"></div>
+    </main>
+
+    <!-- template card-->
+
+    <template id="template-card">
+        <div class="card">
+            <div>
+                <img src="" alt="news-image" class="news-img" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 class="news-title" id="news-title"></h3>
+                <h6 class="news-source" id="news-source"></h6>
+                <p class="news-desc" id="news-desc"></p>
+            </div>
+        </div>
+    </template>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

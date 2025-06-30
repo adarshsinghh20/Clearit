@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SkillCraft Academy - Mastering Skills, Transforming Lives</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fffde7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            background-color: #ffd54f;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            color: #0055ff;
+            font-size: 2.5em;
+        }
+        .category-filters {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .filter-btn {
+            background-color: #ffeb3b;
+            border: 2px solid #fbc02d;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        #dur{
+            font-weight: bold;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #fbc02d;
+            transform: scale(1.05);
+        }
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .course-card {
+            background-color: white;
+            border: 3px solid #ffeb3b;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        .course-card h3 {
+            color: #ff6f00;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .course-details {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            color: #ffa000;
+            font-weight: bold;
+        }
+        #line{
+            font-weight: bold;
+        }
+        .start-btn {
+            background-color: #ffd54f;
+            color: black;
+            border: 2px solid #ffa000;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        .start-btn:hover {
+            background-color: #fbc02d;
+        }
+        @media (max-width: 768px) {
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SkillCraft Academy</h1>
+            <p id="line">Transforming Potential into Mastery - 30+ Courses to Elevate Your Skills</p>
+        </header>
+
+        <div class="category-filters">
+            <button class="filter-btn active" data-category="All">All Courses</button>
+            <button class="filter-btn" data-category="Technology">Technology</button>
+            <button class="filter-btn" data-category="Business">Business</button>
+            <button class="filter-btn" data-category="Design">Design</button>
+            <button class="filter-btn" data-category="Programming">Programming</button>
+            <button class="filter-btn" data-category="Personal Development">Personal Development</button>
+            <button class="filter-btn" data-category="Finance">Finance</button>
+            <button class="filter-btn" data-category="Marketing">Marketing</button>
+        </div>
+
+        <div class="courses-grid">
+            <!-- Technology Courses -->
+            <div class="course-card" data-category="Technology">
+                <h3>Web Development Fundamentals</h3>
+                <div class="course-details">
+                    <span>Technology</span>
+                    <span>Beginner</span>
+                </div>
+                <div id="dur">Duration: 4 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+            <div class="course-card" data-category="Technology">
+                <h3>Digital Analytics Mastery</h3>
+                <div class="course-details">
+                    <span>Technology</span>
+                    <span>Advanced</span>
+                </div>
+                <div id="dur">Duration: 8 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+            <div class="course-card" data-category="Technology">
+                <h3>Cloud Computing Essentials</h3>
+                <div class="course-details">
+                    <span>Technology</span>
+                    <span>Intermediate</span>
+                </div>
+                <div id="dur">Duration: 6 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+
+            <!-- Programming Courses -->
+            <div class="course-card" data-category="Programming">
+                <h3>Python Programming</h3>
+                <div class="course-details">
+                    <span>Programming</span>
+                    <span>Beginner</span>
+                </div>
+                <div id="dur">Duration: 5 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+            <div class="course-card" data-category="Programming">
+                <h3>JavaScript Advanced Techniques</h3>
+                <div class="course-details">
+                    <span>Programming</span>
+                    <span>Advanced</span>
+                </div>
+                <div id="dur">Duration: 7 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+            <div class="course-card" data-category="Programming">
+                <h3>Machine Learning Fundamentals</h3>
+                <div class="course-details">
+                    <span>Programming</span>
+                    <span>Intermediate</span>
+                </div>
+                <div id="dur">Duration: 8 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+
+            <!-- Business Courses -->
+            <div class="course-card" data-category="Business">
+                <h3>Digital Marketing Mastery</h3>
+                <div class="course-details">
+                    <span>Business</span>
+                    <span>Advanced</span>
+                </div>
+                <div id="dur">Duration: 8 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+            <div class="course-card" data-category="Business">
+                <h3>Entrepreneurship Bootcamp</h3>
+                <div class="course-details">
+                    <span>Business</span>
+                    <span>Intermediate</span>
+                </div>
+                <div id="dur">Duration: 6 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+            <div class="course-card" data-category="Business">
+                <h3>Business Strategy & Innovation</h3>
+                <div class="course-details">
+                    <span>Business</span>
+                    <span>Advanced</span>
+                </div>
+                <div id="dur">Duration: 7 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+
+            <!-- Design Courses -->
+            <div class="course-card" data-category="Design">
+                <h3>UX/UI Design</h3>
+                <div class="course-details">
+                    <span>Design</span>
+                    <span>Intermediate</span>
+                </div>
+                <div id="dur">Duration: 6 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+            <div class="course-card" data-category="Design">
+                <h3>Graphic Design Fundamentals</h3>
+                <div class="course-details">
+                    <span>Design</span>
+                    <span>Beginner</span>
+                </div>
+                <div id="dur">Duration: 5 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+            <div class="course-card" data-category="Design">
+                <h3>Advanced Design Techniques</h3>
+                <div class="course-details">
+                    <span>Design</span>
+                    <span>Advanced</span>
+                </div>
+                <div id="dur">Duration: 8 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+
+            <!-- Personal Development Courses -->
+            <div class="course-card" data-category="Personal Development">
+                <h3>Leadership Skills</h3>
+                <div class="course-details">
+                    <span>Personal Development</span>
+                    <span>Advanced</span>
+                </div>
+                <div id="dur">Duration: 7 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+            <div class="course-card" data-category="Personal Development">
+                <h3>Emotional Intelligence Mastery</h3>
+                <div class="course-details">
+                    <span>Personal Development</span>
+                    <span>Intermediate</span>
+                </div>
+                <div id="dur">Duration: 5 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+            <div class="course-card" data-category="Personal Development">
+                <h3>Time Management & Productivity</h3>
+                <div class="course-details">
+                    <span>Personal Development</span>
+                    <span>Beginner</span>
+                </div>
+                <div id="dur">Duration: 4 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+
+            <!-- Finance Courses -->
+            <div class="course-card" data-category="Finance">
+                <h3>Investment Strategies</h3>
+                <div class="course-details">
+                    <span>Finance</span>
+                    <span>Advanced</span>
+                </div>
+                <div id="dur">Duration: 8 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+            <div class="course-card" data-category="Finance">
+                <h3>Personal Finance Management</h3>
+                <div class="course-details">
+                    <span>Finance</span>
+                    <span>Beginner</span>
+                </div>
+                <div id="dur">Duration: 5 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+            <div class="course-card" data-category="Finance">
+                <h3>Cryptocurrency & Blockchain</h3>
+                <div class="course-details">
+                    <span>Finance</span>
+                    <span>Intermediate</span>
+                </div>
+                <div id="dur">Duration: 6 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+
+            <!-- Marketing Courses -->
+            <div class="course-card" data-category="Marketing">
+                <h3>Social Media Marketing</h3>
+                <div class="course-details">
+                    <span>Marketing</span>
+                    <span>Intermediate</span>
+                </div>
+                <div id="dur">Duration: 6 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+            <div class="course-card" data-category="Marketing">
+                <h3>Content Marketing Strategies</h3>
+                <div class="course-details">
+                    <span>Marketing</span>
+                    <span>Advanced</span>
+                </div>
+                <div id="dur">Duration: 7 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+            <div class="course-card" data-category="Marketing">
+                <h3>Email Marketing Fundamentals</h3>
+                <div class="course-details">
+                    <span>Marketing</span>
+                    <span>Beginner</span>
+                </div>
+                <div id="dur">Duration: 4 weeks</div>
+                <button class="start-btn">Start Learning</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const courseCards = document.querySelectorAll('.course-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const category = button.getAttribute('data-category');
+                    
+                    courseCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        
+                        if (category === 'All' || cardCategory === category) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

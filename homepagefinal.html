@@ -1,0 +1,663 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Compass - Your Guide to Professional Success</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fefce8;
+        }
+
+        header {
+            background-color: #facc15;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            color: #713f12;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: #854d0e;
+            font-size: 1.2rem;
+        }
+
+
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #FFB31F;
+            color: rgb(78, 67, 52);
+            max-height: 90px;
+        }
+        #loginn{
+            font-weight: bold;
+            
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+
+        }
+
+        .logo img {
+            padding-top: 10px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .logo p {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .nav-options {
+            display: flex;
+            align-items: center;
+            
+            
+        }
+        #p{
+            justify-content: left;
+        }
+
+        .nav-options a {
+            color: rgb(78, 67, 52);
+            text-decoration: none;
+            padding: 4px 10px 5px 10px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-options a:hover {
+            background-color: #fff8dc;
+        }
+        .dropdown a:hover{
+            background-color: #fff8dc;
+        }
+        #profile {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px;
+            border: 2px solid #f0f4f8;
+            border-radius: 20px;
+            background-color: #fff8dc;
+            color: #FFB31F;
+            transition: transform 0.3s ease;
+        }
+
+        #profile:hover {
+            transform: translateY(-5px);
+        }
+
+        #profilepic {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        #profile p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* News of the Week Section */
+        .news-section {
+            position: relative;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            padding: 5px;
+        }
+
+        .news-box {
+            display: flex;
+            flex-direction: row;
+            width: 1400px;
+            height: 270px;
+            background-color: #fff8dc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .news-box img {
+            width: 50%;
+            height: 100%;
+            padding: 5px 15px;
+            object-fit: cover;
+            border-radius: 30px;
+        }
+
+        .news-content {
+            width: 50%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .news-content h4 {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #FFB31F;
+        }
+
+        .news-content p {
+            font-size: 20px;
+            color: #000000;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #FFB31F;
+            padding: 15px;
+            border-radius: 90%;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .slider-arrow:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-arrow {
+            left: 20px;
+        }
+
+        .next-arrow {
+            right: 20px;
+        }
+
+
+   /* Review Section */
+   .review-section {
+            padding: 40px 20px;
+            /* background-color: #f9f9f9; */
+        }
+
+        .review-header h2 {
+            text-align: center;
+            font-size: 28px;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .review-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .review-card {
+            max-width: 300px;
+            padding: 20px;
+            background-color:  #a56f09;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .review-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            margin-left: 0px;
+            margin-right: 19px;
+        }
+
+        .student-details {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .review-content p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .review-stars {
+            font-size: 25px;
+            color: #FFD700;
+        }
+
+        .all-reviews {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .all-reviews a {
+            color: #4d4646;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: 2px solid #FFB31F;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .all-reviews a:hover {
+            background-color: #fff8dc;
+            color: #4d4646;
+        }
+
+
+        
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #fef08a;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background-color: #fef9c3;
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: #ca8a04;
+            margin-bottom: 1rem;
+        }
+
+        .card h2 {
+            color: #713f12;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            color: #854d0e;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        footer {
+            background-color: #facc15;
+            padding: 1.5rem;
+            text-align: center;
+            color: #713f12;
+            margin-top: 2rem;
+        }
+        #h{
+            color: black;
+        }
+
+        
+        .custom-footer {
+            background:linear-gradient(#edb33f1f,#ffaa00);
+            color: rgb(0, 0, 0);
+            padding: 40px;
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content h2 {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .footer-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 80px;
+            right: 20px;
+            margin-top: 15px;
+        }
+
+        .footer-icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-icons img:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-divider {
+            border: 0.5px solid white;
+            margin: 20px 0;
+            opacity: 0.5;
+        }
+        #l{
+            text-decoration: none;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <a href="homepagefinal.html"><img src="joblogo.png" alt="Clearit"></a>
+            <p>Clearit</p>
+        </div>
+
+        <div class="nav-options">
+            <a href="homepagefinal.html">Home</a>
+            <a href="job.html">Jobs And Internship</a>
+            <a href="blog2.html">Blogs</a>
+            <a href="#">AboutUs</a>
+            <a href="contact-form-example-02/contact.html">ContactUs</a>
+            <a href="login.html" id="loginn">Login</a>
+            
+            </div>
+           
+            </a>
+        </div>
+    </nav>
+
+
+<!-- News of the Week Section -->
+<section class="news-section">
+    <div class="slider-arrow prev-arrow" onclick="moveSlide(-1)">&#10094;</div>
+    <div class="news-slider" id="newsSlider"></div>
+    <div class="slider-arrow next-arrow" onclick="moveSlide(1)">&#10095;</div>
+</section>
+
+
+
+   
+
+    <main class="container">
+        <div class="grid">
+           
+            <a href="explore career.html" id="l">
+                <div class="card">
+                <i class="fas fa-compass"></i>
+                <h2>Career Exploration Resources</h2>
+                <p>Discover various career paths and opportunities aligned with your interests</p>
+            </div> </a>
+
+            <a href="skills.html" id="l"><div class="card">
+                <i class="fas fa-graduation-cap"></i>
+                <h2>Skill-Building Modules</h2>
+                <p>Interactive courses and tutorials to develop essential skills</p>
+            </div> </a>
+
+
+            
+            
+
+            <a href="mentor.html" id="l">
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h2>Mentorship Opportunities</h2>
+                <p>Connect with industry professionals for guidance and support</p>
+            </div> </a>
+
+        
+            
+
+            <a href="job.html" id="l">
+            <div class="card">
+                <i class="fas fa-list-alt"></i>
+                <h2>Internship and Job Listings</h2>
+                <p>Find current openings and opportunities in your field</p>
+            </div></a>
+            <a href="scholarship.html" id="l">
+            <div class="card">
+                <i class="fas fa-piggy-bank"></i>
+                <h2>Scholarships and Financial Aid</h2>
+                <p>Financial resources to support your education and training</p>
+            </div> </a>
+            <a href="mental health.html" id="l">
+            <div class="card">
+                <i class="fas fa-heart"></i>
+                <h2>Mental Health and Wellbeing</h2>
+                <p>Resources for maintaining work-life balance and mental health</p>
+            </div> </a>
+
+            <a href="emergingtr final.html" id="l">
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h2>Emerging Trends and Future Careers</h2>
+                <p>Stay updated with industry trends and future job markets</p>
+            </div> </a>
+
+           
+        </div>
+    </main>
+
+        <!-- Review Section -->
+        <section class="review-section">
+            <div class="review-header">
+                <h2>Student Reviews</h2>
+            </div>
+            <div class="review-cards">
+                <div class="review-card">
+                    <div class="student-details"><img src="https://india.studyin-uk.com/wp-content/uploads/2024/04/siuk-baner-slider-img.jpg" alt="Student 3" class="review-pic">
+                        <p>Narendra</p>
+                    </div>
+                    <div class="review-content">
+                        <p>"CareerConnect helped me land my dream job. Their resources and mentorship are invaluable!"</p>
+                    </div>
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                </div>
+                <div class="review-card">
+                    <div class="student-details"><img src="https://i.pinimg.com/736x/5a/ab/f8/5aabf84d67477f77d3bb8f0fe4cfcd17.jpg" alt="Student 3" class="review-pic">
+                        <p>Robin</p>
+                    </div>
+                    <div class="review-content">
+                        <p>"I gained confidence and valuable skills through CareerConnect's workshops and networking
+                            events."</p>
+                    </div>
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+                <div class="review-card">
+                    <div class="student-details"><img src="https://t4.ftcdn.net/jpg/06/40/07/03/360_F_640070383_9LJ3eTRSvOiwKyrmBYgcjhSlckDnNcxl.jpg" alt="Student 3" class="review-pic">
+                        <p>Vipul Singh</p>
+                    </div>
+                    <div class="review-content">
+                        <p>"The CareerConnect platform made my job search easier and more organized. Highly recommend it to
+                            students!"</p>
+                    </div>
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+                <div class="review-card">
+                    <div class="student-details"><img src="https://img.freepik.com/free-photo/smiley-man-relaxing-outdoors_23-2148739334.jpg?semt=ais_hybrid" alt="Student 3" class="review-pic"></img>
+                        <p>Dhruv</p>
+                    </div>
+                    <div class="review-content">
+                        <p>"The CareerConnect platform made my job search easier and more organized. Highly recommend it to
+                            students!"</p>
+                    </div>
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                </div>
+            </div>
+            <div class="all-reviews">
+                <a href="#">View All Reviews</a>
+            </div>
+        </section>
+
+    
+    <footer class="custom-footer">
+        <div class="footer-content">
+            <h2>ClearIt</h2>
+            <p>Clearit provides tech news, preparation tools, career guidance, and a chance to get a dream job for every
+                student willing to join us.</p>
+            <div class="footer-icons">
+                <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="insta.png" alt="Instagram"></a>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <p class="footer-copyright">
+            &copy; 2024 Clearit. All rights reserved.
+        </p>
+    </footer>
+
+    <script>        // Array of news articles
+        const newsItems = [
+            {
+                title: "New Tech Job Openings",
+                imgsrc: "https://img.freepik.com/free-photo/we-are-hiring-digital-collage_23-2149667063.jpg",
+                description: "Explore new tech job openings for freshers this week in leading companies."
+            },
+            {
+                title: "Student Networking Tips",
+                imgsrc: "news2.jpg",
+                description: "Learn the best strategies for networking as a student aiming for a career."
+            },
+            {
+                title: "Internship Opportunities",
+                imgsrc: "https://t3.ftcdn.net/jpg/00/97/41/10/360_F_97411085_NBlnPVg5OxMO4E1K6WDGczjlJ2XkNQFb.jpg",
+                description: "Find top internship opportunities to boost your career this summer."
+            },
+            {
+                title: "Job Interview Preparation",
+                imgsrc: "https://static.jobscan.co/blog/uploads/Job-interview-tips-1.jpg",
+                description: "Get prepared for your next job interview with these tips from industry experts."
+            },
+            {
+                title: "Career Guidence",
+                imgsrc: "https://babafaridgroup.edu.in/assets/img/bfgi/free-career-guidance.jpg",
+                description: "Discover strategies for accelerating your career progression and growth."
+            }
+        ];
+
+        let currentIndex = 0;
+
+        // Function to update the news slider
+        function updateNewsSlider() {
+            const slider = document.getElementById("newsSlider");
+            slider.innerHTML = ''; // Clear previous news items
+
+            const currentNews = newsItems[currentIndex];
+
+            // Create the news box container
+            const newsBox = document.createElement("div");
+            newsBox.classList.add("news-box");
+
+            // Create the image element
+            const img = document.createElement("img");
+            img.src = currentNews.imgsrc;
+            img.alt = currentNews.title;
+
+            // Create the content container
+            const contentDiv = document.createElement("div");
+            contentDiv.classList.add("news-content");
+
+            // Create title and description
+            const title = document.createElement("h4");
+            title.innerText = currentNews.title;
+
+            const description = document.createElement("p");
+            description.innerText = currentNews.description;
+
+            // Append title and description to content
+            contentDiv.appendChild(title);
+            contentDiv.appendChild(description);
+
+            // Append image and content to newsBox
+            newsBox.appendChild(img);
+            newsBox.appendChild(contentDiv);
+
+            // Append newsBox to the slider
+            slider.appendChild(newsBox);
+        }
+
+        // Move to the next or previous slide
+        function moveSlide(direction) {
+            currentIndex = (currentIndex + direction + newsItems.length) % newsItems.length;
+            updateNewsSlider();
+        }
+
+        // Initial update
+        updateNewsSlider();</script>
+</body>
+</html>

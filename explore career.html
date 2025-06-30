@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Explorer - Find Your Path</title>
+    <style>
+        :root {
+            --primary: #FFD700;
+            --secondary: #FFF4BD;
+            --accent: #FFB700;
+            --text: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 4rem 2rem;
+            text-align: center;
+            color: #333;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .search-section {
+            background: var(--secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: -2rem auto 2rem;
+            max-width: 800px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .search-box {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--accent);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: var(--primary);
+            color: var(--text);
+        }
+        
+        .career-paths {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .career-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 2px solid var(--secondary);
+            transition: transform 0.3s;
+        }
+        
+        .career-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .career-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .category-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .tag {
+            background: var(--secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.875rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+        
+        .feature {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .feature img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+
+        .career-filters {
+            margin: 2rem 0;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-button {
+            background: var(--secondary);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-button:hover {
+            background: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Discover Your Perfect Career Path</h1>
+        <p>Explore opportunities aligned with your interests, skills, and aspirations</p>
+    </div>
+    
+    <div class="container">
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" placeholder="Enter your interests, skills, or dream job...">
+                <button>Explore Careers</button>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <img src="https://img.icons8.com/?size=100&id=m4bBJPx7WmQW&format=png&color=000000" alt="Assessment Icon">
+                <h3>Career Assessment</h3>
+                <p>Take our comprehensive assessment to discover careers that match your personality</p>
+            </div>
+            <div class="feature">
+                <img src="https://img.icons8.com/?size=100&id=0DjbFURK3pNs&format=png&color=000000" alt="Guidance Icon">
+                <h3>Expert Guidance</h3>
+                <p>Get personalized recommendations from career counselors</p>
+            </div>
+            <div class="feature">
+                <img src="https://img.icons8.com/?size=100&id=Vi4yU3hEPGoI&format=png&color=FAB005" alt="Resources Icon">
+                <h3>Learning Resources</h3>
+                <p>Access training materials and courses for your chosen path</p>
+            </div>
+        </div>
+
+        <h2>Explore Career Paths</h2>
+        <div class="career-filters">
+            <button class="filter-button">All Careers</button>
+            <button class="filter-button">Technology</button>
+            <button class="filter-button">Healthcare</button>
+            <button class="filter-button">Creative</button>
+            <button class="filter-button">Business</button>
+            <button class="filter-button">Science</button>
+        </div>
+        
+        <div class="career-paths">
+            <!-- Original Career Cards -->
+            <div class="career-card">
+                <h3>Technology & Software</h3>
+                <p>Build the future through code and innovation</p>
+                <div class="category-tags">
+                    <span class="tag">Programming</span>
+                    <span class="tag">AI/ML</span>
+                    <span class="tag">Web Development</span>
+                </div>
+            </div>
+            
+            <div class="career-card">
+                <h3>Healthcare & Medicine</h3>
+                <p>Make a difference in people's lives through healthcare</p>
+                <div class="category-tags">
+                    <span class="tag">Medical</span>
+                    <span class="tag">Nursing</span>
+                    <span class="tag">Research</span>
+                </div>
+            </div>
+            
+            <div class="career-card">
+                <h3>Creative Arts & Design</h3>
+                <p>Express yourself through digital and traditional media</p>
+                <div class="category-tags">
+                    <span class="tag">Graphic Design</span>
+                    <span class="tag">UX/UI</span>
+                    <span class="tag">Animation</span>
+                </div>
+            </div>
+            
+            <div class="career-card">
+                <h3>Business & Finance</h3>
+                <p>Drive success through strategic thinking and analysis</p>
+                <div class="category-tags">
+                    <span class="tag">Management</span>
+                    <span class="tag">Finance</span>
+                    <span class="tag">Marketing</span>
+                </div>
+            </div>
+
+            <!-- New Career Cards -->
+            <div class="career-card">
+                <h3>Data Science & Analytics</h3>
+                <p>Transform data into actionable insights</p>
+                <div class="category-tags">
+                    <span class="tag">Big Data</span>
+                    <span class="tag">Statistics</span>
+                    <span class="tag">Visualization</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Environmental Science</h3>
+                <p>Work towards a sustainable future</p>
+                <div class="category-tags">
+                    <span class="tag">Conservation</span>
+                    <span class="tag">Climate</span>
+                    <span class="tag">Research</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Education & Teaching</h3>
+                <p>Shape the minds of future generations</p>
+                <div class="category-tags">
+                    <span class="tag">Teaching</span>
+                    <span class="tag">Curriculum</span>
+                    <span class="tag">EdTech</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Digital Marketing</h3>
+                <p>Connect brands with their audience</p>
+                <div class="category-tags">
+                    <span class="tag">Social Media</span>
+                    <span class="tag">SEO</span>
+                    <span class="tag">Content</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Biotechnology</h3>
+                <p>Innovate at the intersection of biology and technology</p>
+                <div class="category-tags">
+                    <span class="tag">Research</span>
+                    <span class="tag">Lab Work</span>
+                    <span class="tag">Development</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Civil Engineering</h3>
+                <p>Design and build the infrastructure of tomorrow</p>
+                <div class="category-tags">
+                    <span class="tag">Construction</span>
+                    <span class="tag">Design</span>
+                    <span class="tag">Project Management</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Psychology & Counseling</h3>
+                <p>Support mental health and well-being</p>
+                <div class="category-tags">
+                    <span class="tag">Therapy</span>
+                    <span class="tag">Research</span>
+                    <span class="tag">Clinical</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Renewable Energy</h3>
+                <p>Power the future with sustainable solutions</p>
+                <div class="category-tags">
+                    <span class="tag">Solar</span>
+                    <span class="tag">Wind</span>
+                    <span class="tag">Engineering</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Game Development</h3>
+                <p>Create interactive entertainment experiences</p>
+                <div class="category-tags">
+                    <span class="tag">Programming</span>
+                    <span class="tag">Design</span>
+                    <span class="tag">Animation</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Hospitality Management</h3>
+                <p>Create exceptional guest experiences</p>
+                <div class="category-tags">
+                    <span class="tag">Hotels</span>
+                    <span class="tag">Tourism</span>
+                    <span class="tag">Events</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Cybersecurity</h3>
+                <p>Protect digital assets and information</p>
+                <div class="category-tags">
+                    <span class="tag">Security</span>
+                    <span class="tag">Networks</span>
+                    <span class="tag">Risk Management</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Architecture</h3>
+                <p>Design spaces that inspire and function</p>
+                <div class="category-tags">
+                    <span class="tag">Design</span>
+                    <span class="tag">Construction</span>
+                    <span class="tag">Urban Planning</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Content Creation</h3>
+                <p>Tell stories across digital platforms</p>
+                <div class="category-tags">
+                    <span class="tag">Writing</span>
+                    <span class="tag">Video</span>
+                    <span class="tag">Social Media</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Human Resources</h3>
+                <p>Build and support successful teams</p>
+                <div class="category-tags">
+                    <span class="tag">Recruitment</span>
+                    <span class="tag">Training</span>
+                    <span class="tag">Employee Relations</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Legal Services</h3>
+                <p>Advocate for justice and legal rights</p>
+                <div class="category-tags">
+                    <span class="tag">Law</span>
+                    <span class="tag">Compliance</span>
+                    <span class="tag">Consultation</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Product Management</h3>
+                <p>Guide products from concept to launch</p>
+                <div class="category-tags">
+                    <span class="tag">Strategy</span>
+                    <span class="tag">Development</span>
+                    <span class="tag">Innovation</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Scientific Research</h3>
+                <p>Push the boundaries of human knowledge</p>
+                <div class="category-tags">
+                    <span class="tag">Research</span>
+                    <span class="tag">Lab Work</span>
+                    <span class="tag">Analysis</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Supply Chain Management</h3>
+                <p>Optimize global logistics and operations</p>
+                <div class="category-tags">
+                    <span class="tag">Logistics</span>
+                    <span class="tag">Operations</span>
+                    <span class="tag">Planning</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Artificial Intelligence</h3>
+                <p>Develop intelligent systems and solutions</p>
+                <div class="category-tags">
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Neural Networks</span>
+                    <span class="tag">Research</span>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <h3>Financial Technology</h3>
+                <p>Innovate in digital financial services</p>
+                <div class="category-tags">
+                    <span class="tag">Banking</span>
+                    <span class="tag">Blockchain</span>
+                    <span class="tag">Innovation</span>
+                </div

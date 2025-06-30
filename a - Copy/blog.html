@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest - News Blog</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid #EAB308;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .news-card {
+            transition: transform 0.2s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-badge {
+            background-color: #FEF3C7;
+            color: #92400E;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.875rem;
+        }
+        
+        .custom-footer {
+            background:linear-gradient(#edb33f1f,#ffaa00);
+            color: rgb(0, 0, 0);
+            padding: 40px;
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content h2 {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .footer-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 80px;
+            right: 20px;
+            margin-top: 15px;
+        }
+
+        .footer-icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-icons img:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-divider {
+            border: 0.5px solid white;
+            margin: 20px 0;
+            opacity: 0.5;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body class="bg-yellow-50">
+    <!-- Header -->
+    <header class="bg-yellow-400 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                    </svg>
+                    <h1 class="text-2xl font-bold">Daily Digest By Clearit</h1>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <button class="category-filter hover:text-yellow-800 transition-colors" data-category="all">All</button>
+                    <button class="category-filter hover:text-yellow-800 transition-colors" data-category="Technology">Technology</button>
+                    <button class="category-filter hover:text-yellow-800 transition-colors" data-category="Environment">Environment</button>
+                    <button class="category-filter hover:text-yellow-800 transition-colors" data-category="Healthcare">Healthcare</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto p-6">
+        <!-- Loading Spinner -->
+        <div id="loading" class="flex justify-center items-center min-h-[400px]">
+            <div class="loader"></div>
+        </div>
+
+        <!-- News Container -->
+        <div id="newsContainer" class="grid gap-6 hidden">
+            <!-- News cards will be inserted here -->
+        </div>
+
+        <!-- Error Message -->
+        <div id="error" class="hidden text-red-500 text-center p-4">
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <!-- <footer class="bg-yellow-400 mt-12 p-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-sm">© 2024 Daily Digest By Clearit. All rights reserved.</p>
+        </div>
+    </footer> -->
+    <footer class="custom-footer">
+        <div class="footer-content">
+            <h2>ClearIt</h2>
+            <p>Clearit provides tech news, preparation tools, career guidance, and a chance to get a dream job for every
+                student willing to join us.</p>
+            <div class="footer-icons">
+                <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="insta.png" alt="Instagram"></a>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <p class="footer-copyright">
+            &copy; 2024 Daily Digest By Clearit. All rights reserved.
+        </p>
+    </footer>
+
+
+    <script>
+        // Sample news data
+        const sampleNews = [
+            {
+                id: 1,
+                title: "Major Scientific Breakthrough in Quantum Computing",
+                description: "Scientists achieve new milestone in quantum supremacy, processing complex calculations in record time.",
+                author: "Dr. Sarah Chen",
+                date: "2024-11-16",
+                category: "Technology"
+            },
+            {
+                id: 2,
+                title: "Zeiss Opens Technology Center in Bengaluru, Plans Workforce Expansion",
+                description: "World leaders commit to ambitious carbon reduction targets and sustainable energy programs.",
+                author: "Michael Roberts",
+                date: "2024-11-16",
+                category: "Technology"
+            },
+            {
+                id: 3,
+                title: "Revolutionary AI Model Assists in Medical Diagnosis",
+                description: "New artificial intelligence system shows promising results in early disease detection.",
+                author: "Dr. James Wilson",
+                date: "2024-11-15",
+                category: "Healthcare"
+            },
+            {
+                id: 4,
+                title: "Space Tourism Company Announces First Commercial Flight",
+                description: "Private space company reveals plans for civilian space travel beginning next year.",
+                author: "Emily Parker",
+                date: "2024-11-15",
+                category: "Technology"
+            },
+            {
+                id: 4,
+                title: "Space Tourism Company Announces First Commercial Flight",
+                description: "Private space company reveals plans for civilian space travel beginning next year.",
+                author: "Emily Parker",
+                date: "2024-11-15",
+                category: "Technology"
+            },
+            {
+                id: 4,
+                title: "Space Tourism Company Announces First Commercial Flight",
+                description: "Private space company reveals plans for civilian space travel beginning next year.",
+                author: "Emily Parker",
+                date: "2024-11-15",
+                category: "Technology"
+            },
+            {
+                id: 4,
+                title: "Space Tourism Company Announces First Commercial Flight",
+                description: "Private space company reveals plans for civilian space travel beginning next year.",
+                author: "Emily Parker",
+                date: "2024-11-15",
+                category: "Technology"
+            },
+            {
+                id: 4,
+                title: "Space Tourism Company Announces First Commercial Flight",
+                description: "Private space company reveals plans for civilian space travel beginning next year.",
+                author: "Emily Parker",
+                date: "2024-11-15",
+                category: "Technology"
+            },
+            {
+                id: 4,
+                title: "Space Tourism Company Announces First Commercial Flight",
+                description: "Private space company reveals plans for civilian space travel beginning next year.",
+                author: "Emily Parker",
+                date: "2024-11-15",
+                category: "Technology"
+            },
+            {
+                id: 4,
+                title: "Space Tourism Company Announces First Commercial Flight",
+                description: "Private space company reveals plans for civilian space travel beginning next year.",
+                author: "Emily Parker",
+                date: "2024-11-15",
+                category: "Technology"
+            },
+            {
+                id: 4,
+                title: "Space Tourism Company Announces First Commercial Flight",
+                description: "Private space company reveals plans for civilian space travel beginning next year.",
+                author: "Emily Parker",
+                date: "2024-11-15",
+                category: "Technology"
+            },
+            {
+                id: 4,
+                title: "Space Tourism Company Announces First Commercial Flight",
+                description: "Private space company reveals plans for civilian space travel beginning next year.",
+                author: "Emily Parker",
+                date: "2024-11-15",
+                category: "Technology"
+            }
+        ];
+
+        // DOM elements
+        const loading = document.getElementById('loading');
+        const newsContainer = document.getElementById('newsContainer');
+        const errorElement = document.getElementById('error');
+        const categoryFilters = document.querySelectorAll('.category-filter');
+
+        // Create news card HTML
+        function createNewsCard(article) {
+            return `
+                <div class="news-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h2 class="text-xl font-bold mb-2">${article.title}</h2>
+                                <div class="text-sm text-gray-500 mb-2">
+                                    By ${article.author} | ${article.date}
+                                </div>
+                                <span class="category-badge">${article.category}</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </div>
+                        <p class="text-gray-700 mt-4">${article.description}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Display news articles
+        function displayNews(articles) {
+            newsContainer.innerHTML = articles.map(article => createNewsCard(article)).join('');
+        }
+
+        // Filter articles by category
+        function filterArticles(category) {
+            const filteredArticles = category === 'all' 
+                ? sampleNews 
+                : sampleNews.filter(article => article.category === category);
+            displayNews(filteredArticles);
+        }
+
+        // Add click handlers to category filters
+        categoryFilters.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.category;
+                filterArticles(category);
+                
+                // Update active state
+                categoryFilters.forEach(btn => btn.classList.remove('text-yellow-800'));
+                button.classList.add('text-yellow-800');
+            });
+        });
+
+        // Simulate API fetch
+        setTimeout(() => {
+            loading.classList.add('hidden');
+            newsContainer.classList.remove('hidden');
+            displayNews(sampleNews);
+        }, 1500);
+
+        // Error handling example
+        function showError(message) {
+            loading.classList.add('hidden');
+            newsContainer.classList.add('hidden');
+            errorElement.classList.remove('hidden');
+            errorElement.textContent = message;
+        }
+
+        // To test error handling, uncomment this line:
+        // showError('Failed to fetch news articles. Please try again later.');
+    </script>
+</body>
+</html>

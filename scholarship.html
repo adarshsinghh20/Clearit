@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scholarship & Financial Aid Center</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        body {
+            background-color: #FFF7C0;
+            overflow-x: hidden;
+        }
+        .animate-slide { animation: slideIn 1s ease forwards; }
+        .animate-pulse { animation: pulse 2s infinite; }
+    </style>
+</head>
+<body class="font-sans">
+    <div class="container mx-auto px-4 py-8 bg-yellow-50">
+        <header class="text-center mb-12 opacity-0 animate-slide">
+            <h1 class="text-4xl font-bold text-yellow-800 mb-4">Scholarship & Financial Aid Center</h1>
+            <p class="text-yellow-700 max-w-2xl mx-auto">Empowering your educational journey through comprehensive financial support</p>
+        </header>
+
+        <main>
+            <section class="bg-yellow-100 rounded-lg shadow-md p-8 mb-8 opacity-0 animate-slide">
+                <h2 class="text-2xl font-semibold text-yellow-900 mb-6">Available Scholarships</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-yellow-200 p-6 rounded-lg scholarship-card" data-name="Academic Excellence Award" data-amount="418000">
+                        <h3 class="font-bold text-yellow-800 mb-2">Academic Excellence Award</h3>
+                        <p class="text-yellow-700">Merit-based scholarship for top academic performers</p>
+                        <p class="text-yellow-600 font-semibold">₹58,900 Award</p>
+                        <button class="mt-4 bg-yellow-500 text-white px-4 py-2 rounded apply-scholarship animate-pulse">Apply Now</button>
+                    </div>
+                    <div class="bg-yellow-200 p-6 rounded-lg scholarship-card" data-name="Need-Based Grant" data-amount="292000">
+                        <h3 class="font-bold text-yellow-800 mb-2">Need-Based Grant</h3>
+                        <p class="text-yellow-700">Financial support for students with demonstrated financial need</p>
+                        <p class="text-yellow-600 font-semibold">₹292,000 Award</p>
+                        <button class="mt-4 bg-yellow-500 text-white px-4 py-2 rounded apply-scholarship animate-pulse">Apply Now</button>
+                    </div>
+                    <div class="bg-yellow-200 p-6 rounded-lg scholarship-card" data-name="Diversity Scholarship" data-amount="334000">
+                        <h3 class="font-bold text-yellow-800 mb-2">Diversity Scholarship</h3>
+                        <p class="text-yellow-700">Supporting students from underrepresented backgrounds</p>
+                        <p class="text-yellow-600 font-semibold">₹334,000 Award</p>
+                        <button class="mt-4 bg-yellow-500 text-white px-4 py-2 rounded apply-scholarship animate-pulse">Apply Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-yellow-100 rounded-lg shadow-md p-8 mb-8 opacity-0 animate-slide">
+                <h2 class="text-2xl font-semibold text-yellow-900 mb-6">Student Education Loan Partners</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-yellow-200 p-6 rounded-lg">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/58/State_Bank_of_India_logo.svg/159px-State_Bank_of_India_logo.svg.png?20180321064323" alt="">
+                         <br>
+                        <h3 class="font-bold text-Black-800 mb-2">State Bank of India (SBI)</h3>
+                        <p class="text-yellow-700">Offers education loans up to ₹20 lakhs with competitive interest rates</p>
+                        <p class="text-yellow-600 font-semibold">Interest Rate: 8.40% - 9.40%</p>
+                    </div>
+                    <div class="bg-yellow-200 p-6 rounded-lg">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/ICICI_Bank_Logo.svg/456px-ICICI_Bank_Logo.svg.png" alt=""> <br>
+                       
+                        <h3 class="font-bold text-Black-800 mb-2">ICICI Bank</h3>
+                        <p class="text-yellow-700">Provides education loans with quick processing and flexible repayment</p>
+                        <p class="text-yellow-600 font-semibold">Interest Rate: 9.50% - 10.50%</p>
+                    </div>
+                    <div class="bg-yellow-200 p-6 rounded-lg">
+                       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Punjab_National_Bank.svg/270px-Punjab_National_Bank.svg.png?20100911205815" alt=""> <br>
+                        <h3 class="font-bold text-Black-800 mb-2">Punjab National Bank</h3>
+                        <p class="text-yellow-700">Extensive education loan schemes for students across various disciplines</p>
+                        <p class="text-yellow-600 font-semibold">Interest Rate: 8.75% - 9.75%</p>
+                    </div>
+                    <div class="bg-yellow-200 p-6 rounded-lg">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HDFC_Bank_Logo.svg/434px-HDFC_Bank_Logo.svg.png?20110306040211" alt=""> <br>
+                        <h3 class="font-bold text-black-800 mb-2">HDFC Bank</h3>
+                        <p class="text-yellow-700">Education loans with minimal documentation and attractive terms</p>
+                        <p class="text-yellow-600 font-semibold">Interest Rate: 9.25% - 10.25%</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-yellow-100 rounded-lg shadow-md p-8 opacity-0 animate-slide">
+                <h2 class="text-2xl font-semibold text-yellow-900 mb-6">Financial Aid Application</h2>
+                <form id="financial-aid-form" class="max-w-lg mx-auto">
+                    <div class="mb-4">
+                        <label class="block text-yellow-800 mb-2">Full Name</label>
+                        <input type="text" name="fullName" required class="w-full p-2 border-2 border-yellow-300 rounded bg-yellow-50">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-yellow-800 mb-2">Email Address</label>
+                        <input type="email" name="email" required class="w-full p-2 border-2 border-yellow-300 rounded bg-yellow-50">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-yellow-800 mb-2">Annual Household Income</label>
+                        <input type="number" name="income" required class="w-full p-2 border-2 border-yellow-300 rounded bg-yellow-50">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-yellow-800 mb-2">Preferred Scholarship</label>
+                        <select name="scholarship" class="w-full p-2 border-2 border-yellow-300 rounded bg-yellow-50">
+                            <option value="">Select a Scholarship</option>
+                            <option value="Academic Excellence Award">Academic Excellence Award</option>
+                            <option value="Need-Based Grant">Need-Based Grant</option>
+                            <option value="Diversity Scholarship">Diversity Scholarship</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-yellow-800 mb-2">Preferred Bank for Education Loan</label>
+                        <select name="bank" class="w-full p-2 border-2 border-yellow-300 rounded bg-yellow-50">
+                            <option value="">Select a Bank</option>
+                            <option value="SBI">State Bank of India (SBI)</option>
+                            <option value="ICICI">ICICI Bank</option>
+                            <option value="PNB">Punjab National Bank</option>
+                            <option value="HDFC">HDFC Bank</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-yellow-600 text-white py-3 rounded hover:bg-yellow-700 transition duration-300">
+                        Submit Application
+                    </button>
+                </form>
+            </section>
+        </main>
+
+        <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
+            <div class="bg-white p-8 rounded-lg max-w-md w-full">
+                <h2 id="modal-title" class="text-2xl font-bold mb-4"></h2>
+                <p id="modal-message" class="mb-6"></p>
+                <button id="modal-close" class="bg-yellow-500 text-white px-4 py-2 rounded">Close</button>
+            </div>
+        </div>
+
+        <footer class="text-center mt-12 text-yellow-800 opacity-0 animate-slide">
+            <p>© 2024 Scholarship & Financial Aid Center by Clearit | All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.animate-slide');
+            animatedElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.3}s`;
+                el.classList.add('opacity-100');
+            });
+        });
+
+        document.querySelectorAll('.apply-scholarship').forEach(button => {
+            button.addEventListener('click', function() {
+                const card = this.closest('.scholarship-card');
+                const scholarshipName = card.getAttribute('data-name');
+                const scholarshipAmount = card.getAttribute('data-amount');
+
+                showModal(
+                    'Scholarship Application', 
+                    `You are applying for the ${scholarshipName}. Potential award amount: ₹${scholarshipAmount}. Please complete the full application form below.`
+                );
+            });
+        });
+
+        document.getElementById('financial-aid-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+
+            if (!data.fullName || !data.email || !data.income || !data.scholarship || !data.bank) {
+                showModal('Validation Error', 'Please fill out all fields before submitting.');
+                return;
+            }
+
+            showModal(
+                'Application Received', 
+                `Thank you, ${data.fullName}! Your application for the ${data.scholarship} scholarship and ${data.bank} education loan has been received. We will review your application and contact you at ${data.email} within 10 business days.`
+            );
+
+            e.target.reset();
+        });
+
+        function showModal(title, message) {
+            const modal = document.getElementById('modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalMessage = document.getElementById('modal-message');
+
+            modalTitle.textContent = title;
+            modalMessage.textContent = message;
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        document.getElementById('modal-close').addEventListener('click', function() {
+            const modal = document.getElementById('modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

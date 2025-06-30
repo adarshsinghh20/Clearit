@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MentorMatch - Transform Your Career</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fbbf24;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 2rem;
+        }
+
+        .hero {
+            background-color: #fef3c7;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        #mainbt{
+            text-decoration: none;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .btn {
+            background-color: #fbbf24;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #con{
+            font-weight: bold;
+            color: #0b9bf5;
+        }
+
+        .btn:hover {
+            background-color: #f59e0b;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            max-width: 900px;
+            margin: 3rem auto;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: #fbbf24;
+        }
+
+        .success-stories {
+            padding: 4rem 2rem;
+            background-color: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .story-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .story-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .story-card p {
+            color: #666;
+        }
+
+        .testimonials {
+            background-color: #fef3c7;
+            padding: 4rem 2rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #333;
+        }
+        .custom-footer {
+            background:linear-gradient(#edb33f1f,#ffaa00);
+            color: rgb(0, 0, 0);
+            padding: 40px;
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content h2 {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .footer-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 80px;
+            right: 20px;
+            margin-top: 15px;
+        }
+
+        .footer-icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-icons img:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-divider {
+            border: 0.5px solid white;
+            margin: 20px 0;
+            opacity: 0.5;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">Mentor Match By Clearit</div>
+            <div class="nav-links">
+                <!-- <a href="#how-it-works">How It Works</a> -->
+                <a href="homepage.html">Home</a>
+                <a href="ourmentor.html">Find Mentors</a>
+                <a href="login.html">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Career Through Expert Mentorship</h1>
+            <p id="con">Connect with industry leaders who'll guide you to your dream role</p>
+            <p>MentorMatch connects mentees with experienced mentors, offering personalized guidance for personal and professional growth. With expert insights and tailored advice, mentees gain clarity on career goals, skill development, and decision-making. Mentorship through MentorMatch enhances confidence, fosters networking opportunities, and bridges knowledge gaps. For mentors, it’s a chance to share expertise, inspire others, and make a meaningful impact. Whether navigating career transitions, preparing for new challenges, or unlocking potential, MentorMatch empowers individuals to thrive through collaboration and shared wisdom. It’s more than guidance—it’s a partnership for success.
+            </p>
+            <button class="btn"><a href="ourmentor.html" id="mainbt">Find Your Mentor</a></button>
+        </div>
+        <div class="stats">
+            <div class="stat-item">
+                <h3>20+</h3>
+                <p>Active Mentors</p>
+            </div>
+            <div class="stat-item">
+                <h3>95%</h3>
+                <p>Success Rate</p>
+            </div>
+            <div class="stat-item">
+                <h3>4.7/5</h3>
+                <p>Mentor Rating</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="success-stories">
+        <h2 class="section-title">Success Stories</h2>
+        <div class="stories-grid">
+            <div class="story-card">
+                <h3>Software Engineer at Google</h3>
+                <p>Achieved in 3 months</p>
+                <p class="story-description">
+                    "With my mentor's guidance, I improved my system design skills and cracked the interviews."
+                </p>
+            </div>
+            <div class="story-card">
+                <h3>Data Scientist at Meta</h3>
+                <p>Achieved in 4 months</p>
+                <p class="story-description">
+                    "The structured learning path and mock interviews were game-changers."
+                </p>
+            </div>
+            <div class="story-card">
+                <h3>Product Manager at Amazon</h3>
+                <p>Achieved in 3 months</p>
+                <p class="story-description">
+                    "My mentor helped me transition from engineering to product management seamlessly."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2 class="section-title">What Our Mentees Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    "The personalized guidance and industry insights were invaluable in my job search."
+                </p>
+                <p class="testimonial-author">- Rahul Kumar, Software Engineer</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    "My mentor's network and referrals helped me land interviews at top companies."
+                </p>
+                <p class="testimonial-author">- Ashish Singh, Data Analyst</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    "The mock interviews and feedback sessions prepared me perfectly for the real interviews."
+                </p>
+                <p class="testimonial-author">- Akshat Sharma, Product Manager</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="custom-footer">
+        <div class="footer-content">
+            <h2>ClearIt</h2>
+            <p>Clearit provides tech news, preparation tools, career guidance, and a chance to get a dream job for every
+                student willing to join us.</p>
+            <div class="footer-icons">
+                <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="insta.png" alt="Instagram"></a>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <p class="footer-copyright">
+            &copy; 2024 Clearit. All rights reserved.
+        </p>
+    </footer>
+</body>
+</html>

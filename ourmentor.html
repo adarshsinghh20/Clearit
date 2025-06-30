@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Our Mentors</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff9e6;
+        }
+
+        .header {
+            background-color: #ffd700;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .mentors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .mentor-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .mentor-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mentor-info {
+            text-align: center;
+        }
+
+        .mentor-name {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mentor-title {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .mentor-skills {
+            color: #888;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .connect-btn {
+            background-color: #ffd700;
+            color: #333;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .connect-btn:hover {
+            background-color: #ffed4a;
+        }
+
+        .custom-footer {
+            background:linear-gradient(#edb33f1f,#ffaa00);
+            color: rgb(0, 0, 0);
+            padding: 40px;
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content h2 {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .footer-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 80px;
+            right: 20px;
+            margin-top: 15px;
+        }
+
+        .footer-icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-icons img:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-divider {
+            border: 0.5px solid white;
+            margin: 20px 0;
+            opacity: 0.5;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Our Mentors</h1>
+        <p>Connect with experienced professionals in your field</p>
+    </header>
+
+    <div class="container">
+        <div class="mentors-grid">
+            <!-- Original 15 mentors -->
+            <div class="mentor-card">
+                <div class="mentor-info">
+                    <h3 class="mentor-name">Dr. Rajesh Kumar</h3>
+                    <p class="mentor-title">Data Science & AI Expert</p>
+                    <p class="mentor-skills">Python • Machine Learning • Deep Learning</p>
+                    <button class="connect-btn">Connect Now</button>
+                </div>
+            </div>
+
+            <!-- Continue with all original mentors (2-15) without photos -->
+            <!-- Adding 20 new mentors -->
+            <div class="mentor-card">
+                <div class="mentor-info">
+                    <h3 class="mentor-name">Sahaj Singh</h3>
+                    <p class="mentor-title">AR/VR Developer</p>
+                    <p class="mentor-skills">Unity • Unreal Engine • WebXR</p>
+                    <button class="connect-btn">Connect Now</button>
+                </div>
+            </div>
+
+            <div class="mentor-card">
+                <div class="mentor-info">
+                    <h3 class="mentor-name">Mohammed Ali</h3>
+                    <p class="mentor-title">Quantum Computing Researcher</p>
+                    <p class="mentor-skills">Qiskit • Quantum Algorithms • Python</p>
+                    <button class="connect-btn">Connect Now</button>
+                </div>
+            </div>
+
+            <div class="mentor-card">
+                <div class="mentor-info">
+                    <h3 class="mentor-name">Shirish Tiwari</h3>
+                    <p class="mentor-title">Game Development Lead</p>
+                    <p class="mentor-skills">C++ • Game Design • Unity3D</p>
+                    <button class="connect-btn">Connect Now</button>
+                </div>
+            </div>
+
+            <div class="mentor-card">
+                <div class="mentor-info">
+                    <h3 class="mentor-name">Aman Mishra</h3>
+                    <p class="mentor-title">Natural Language Processing Expert</p>
+                    <p class="mentor-skills">BERT • Transformers • PyTorch</p>
+                    <button class="connect-btn">Connect Now</button>
+                </div>
+            </div>
+
+            <div class="mentor-card">
+                <div class="mentor-info">
+                    <h3 class="mentor-name">Priya Malhotra</h3>
+                    <p class="mentor-title">Edge Computing Specialist</p>
+                    <p class="mentor-skills">IoT • Edge AI • Embedded Systems</p>
+                    <button class="connect-btn">Connect Now</button>
+                </div>
+            </div>
+
+            <div class="mentor-card">
+                <div class="mentor-info">
+                    <h3 class="mentor-name">James Wilson</h3>
+                    <p class="mentor-title">Robotics Engineer</p>
+                    <p class="mentor-skills">ROS • Computer Vision • Control Systems</p>
+                    <button class="connect-btn">Connect Now</button>
+                </div>
+            </div>
+
+            <div class="mentor-card">
+                <div class="mentor-info">
+                    <h3 class="mentor-name">Narendra Yadav</h3>
+                    <p class="mentor-title">MLOps Engineer</p>
+                    <p class="mentor-skills">CI/CD • ML Pipeline • TensorFlow</p>
+                    <button class="connect-btn">Connect Now</button>
+                </div>
+            </div>
+
+            <div class="mentor-card">
+                <div class="mentor-info">
+                    <h3 class="mentor-name">Bhavya Joshi</h3>
+                    <p class="mentor-title">5G Network Architect</p>
+                    <p class="mentor-skills">Network Protocols • SDN • NFV</p>
+                    <button class="connect-btn">Connect Now</button>
+                </div>
+            </div>
+
+            <div class="mentor-card">
+                <div class="mentor-info">
+                    <h3 class="mentor-name">Aisha Patel</h3>
+                    <p class="mentor-title">Fintech Solution Architect</p>
+                    <p class="mentor-skills">Blockchain • Payment Systems • Security</p>
+                    <button class="connect-btn">Connect Now</button>
+                </div>
+            </div>
+
+            <div class="mentor-card">
+                <div class="mentor-info">
+                    <h3 class="mentor-name">Anuj</h3>
+                    <p class="mentor-title">Computer Graphics Specialist</p>
+                    <p class="mentor-skills">OpenGL • WebGL • Shader Programming</p>
+                    <button class="connect-btn">Connect Now</button>
+                </div>
+            </div>
+
+                   <!-- Mentor 1 -->
+                   <div class="mentor-card">
+                  
+                    <div class="mentor-info">
+                        <h3 class="mentor-name">Dr. Rajesh Kumar</h3>
+                        <p class="mentor-title">Data Science & AI Expert</p>
+                        <p class="mentor-skills">Python • Machine Learning • Deep Learning</p>
+                        <button class="connect-btn">Connect Now</button>
+                    </div>
+                </div>
+    
+                <!-- Mentor 2 -->
+                <div class="mentor-card">
+                    
+                    <div class="mentor-info">
+                        <h3 class="mentor-name">Priya Sharma</h3>
+                        <p class="mentor-title">Full Stack Developer</p>
+                        <p class="mentor-skills">MERN Stack • Cloud Architecture • JavaScript</p>
+                        <button class="connect-btn">Connect Now</button>
+                    </div>
+                </div>
+    
+                <!-- Mentor 3 -->
+                <div class="mentor-card">
+                    <div class="mentor-info">
+                        <h3 class="mentor-name">Amit Patel</h3>
+                        <p class="mentor-title">Mobile Development Expert</p>
+                        <p class="mentor-skills">iOS • Android • Flutter</p>
+                        <button class="connect-btn">Connect Now</button>
+                    </div>
+                </div>
+    
+                <!-- Mentor 4 -->
+                <div class="mentor-card">
+                  
+                    <div class="mentor-info">
+                        <h3 class="mentor-name">Dr. Meena Verma</h3>
+                        <p class="mentor-title">Cybersecurity Specialist</p>
+                        <p class="mentor-skills">Network Security • Ethical Hacking</p>
+                        <button class="connect-btn">Connect Now</button>
+                    </div>
+                </div>
+    
+                <!-- Mentor 5 -->
+                <div class="mentor-card">
+                    
+                    <div class="mentor-info">
+                        <h3 class="mentor-name">Vikram Singh</h3>
+                        <p class="mentor-title">DevOps Engineer</p>
+                        <p class="mentor-skills">Docker • Kubernetes • AWS</p>
+                        <button class="connect-btn">Connect Now</button>
+                    </div>
+                </div>
+    
+                <!-- Mentor 6 -->
+                <div class="mentor-card">
+                  
+                    <div class="mentor-info">
+                        <h3 class="mentor-name">Anjali Desai</h3>
+                        <p class="mentor-title">UI/UX Designer</p>
+                        <p class="mentor-skills">User Research • Interface Design • Figma</p>
+                        <button class="connect-btn">Connect Now</button>
+                    </div>
+                </div>
+    
+                <!-- Mentor 7 -->
+                <div class="mentor-card">
+                    
+                    <div class="mentor-info">
+                        <h3 class="mentor-name">Suresh Iyer</h3>
+                        <p class="mentor-title">Backend Developer</p>
+                        <p class="mentor-skills">Java • Spring Boot • Microservices</p>
+                        <button class="connect-btn">Connect Now</button>
+                    </div>
+                </div>
+    
+                <!-- Mentor 8 -->
+                <div class="mentor-card">
+                   
+                    <div class="mentor-info">
+                        <h3 class="mentor-name">Neha Gupta</h3>
+                        <p class="mentor-title">Product Manager</p>
+                        <p class="mentor-skills">Agile • Scrum • Product Strategy</p>
+                        <button class="connect-btn">Connect Now</button>
+                    </div>
+                </div>
+    
+                <!-- Mentor 9 -->
+                <div class="mentor-card">
+                    
+                    <div class="mentor-info">
+                        <h3 class="mentor-name">Arjun Reddy</h3>
+                        <p class="mentor-title">Cloud Architect</p>
+                        <p class="mentor-skills">AWS • Azure • GCP</p>
+                        <button class="connect-btn">Connect Now</button>
+                    </div>
+                </div>
+    
+                <!-- Mentor 10 -->
+                <div class="mentor-card">
+              
+                    <div class="mentor-info">
+                        <h3 class="mentor-name">Kavita Krishnan</h3>
+                        <p class="mentor-title">Data Analytics Lead</p>
+                        <p class="mentor-skills">SQL • Tableau • Power BI</p>
+                        <button class="connect-btn">Connect Now</button>
+                    </div>
+                </div>
+    
+                <!-- Mentor 11 -->
+                <div class="mentor-card">
+                   
+                    <div class="mentor-info">
+                        <h3 class="mentor-name">Rahul Mehta</h3>
+                        <p class="mentor-title">Blockchain Developer</p>
+                        <p class="mentor-skills">Ethereum • Smart Contracts • Web3</p>
+                        <button class="connect-btn">Connect Now</button>
+                    </div>
+                </div>
+    
+                <!-- Mentor 12 -->
+                <div class="mentor-card">
+                    
+                    <div class="mentor-info">
+                        <h3 class="mentor-name">Shalini Rajan</h3>
+                        <p class="mentor-title">Quality Assurance Lead</p>
+                        <p class="mentor-skills">Automation Testing • Selenium • JUnit</p>
+                        <button class="connect-btn">Connect Now</button>
+                    </div>
+                </div>
+    
+
+        </div>
+    </div>
+    <footer class="custom-footer">
+        <div class="footer-content">
+            <h2>ClearIt</h2>
+            <p>Clearit provides tech news, preparation tools, career guidance, and a chance to get a dream job for every
+                student willing to join us.</p>
+            <div class="footer-icons">
+                <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="insta.png" alt="Instagram"></a>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <p class="footer-copyright">
+            &copy; 2024 Clearit. All rights reserved.
+        </p>
+    </footer>
+</body>
+</html>

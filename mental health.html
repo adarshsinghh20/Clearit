@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wellness Haven: Mental Health Support</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(20px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        body {
+            background-color: #FFF7C0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .animate-fade { animation: fadeIn 1s ease forwards; }
+        .animate-breathe { animation: breathe 3s infinite ease-in-out; }
+        .interactive-card:hover { 
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-yellow-50">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-12 opacity-0 animate-fade">
+            <h1 class="text-4xl font-bold text-yellow-800 mb-4">Wellness Haven</h1>
+            <p class="text-yellow-700 max-w-2xl mx-auto">Supporting Your Mental Health Journey with Compassion and Care</p>
+        </header>
+
+        <main>
+            <section class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-yellow-100 rounded-lg p-6 shadow-md opacity-0 animate-fade interactive-card">
+                    <h2 class="text-2xl font-semibold text-yellow-900 mb-4">Mood Tracker</h2>
+                    <div class="grid grid-cols-7 gap-2 mb-4">
+                        <button class="bg-green-400 p-2 rounded hover:bg-green-500">😊</button>
+                        <button class="bg-yellow-400 p-2 rounded hover:bg-yellow-500">😐</button>
+                        <button class="bg-red-400 p-2 rounded hover:bg-red-500">😔</button>
+                        <button class="bg-blue-400 p-2 rounded hover:bg-blue-500">😴</button>
+                        <button class="bg-purple-400 p-2 rounded hover:bg-purple-500">😰</button>
+                        <button class="bg-pink-400 p-2 rounded hover:bg-pink-500">😍</button>
+                        <button class="bg-indigo-400 p-2 rounded hover:bg-indigo-500">🤔</button>
+                    </div>
+                    <p class="text-yellow-700">Track and understand your emotional journey</p>
+                </div>
+
+                <div class="bg-yellow-100 rounded-lg p-6 shadow-md opacity-0 animate-fade interactive-card">
+                    <h2 class="text-2xl font-semibold text-yellow-900 mb-4">Daily Wellness Challenges</h2>
+                    <ul class="space-y-3">
+                        <li class="bg-yellow-200 p-3 rounded-lg hover:bg-yellow-300 transition cursor-pointer">
+                            🧘 15-Min Meditation Challenge
+                        </li>
+                        <li class="bg-yellow-200 p-3 rounded-lg hover:bg-yellow-300 transition cursor-pointer">
+                            📚 Gratitude Journaling
+                        </li>
+                        <li class="bg-yellow-200 p-3 rounded-lg hover:bg-yellow-300 transition cursor-pointer">
+                            🚶 Nature Walk Discovery
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-yellow-100 rounded-lg p-6 shadow-md opacity-0 animate-fade interactive-card">
+                    <h2 class="text-2xl font-semibold text-yellow-900 mb-4">Motivational Quotes</h2>
+                    <div class="bg-yellow-200 rounded-lg p-4 mb-4 animate-breathe">
+                        <h3 class="font-bold text-yellow-800">Daily Quotes</h3>
+               
+                        <p class="text-yellow-700">“The road to success and the road to failure are almost exactly the same.”</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-yellow-100 rounded-lg p-6 shadow-md opacity-0 animate-fade">
+                    <h2 class="text-2xl font-semibold text-yellow-900 mb-6">Connect with Counselor</h2>
+                    <form id="counselor-form" class="space-y-4">
+                        <input type="text" placeholder="Your Name" required class="w-full p-2 bg-yellow-50 rounded border-2 border-yellow-300">
+                        <input type="email" placeholder="Email Address" required class="w-full p-2 bg-yellow-50 rounded border-2 border-yellow-300">
+                        <select class="w-full p-2 bg-yellow-50 rounded border-2 border-yellow-300">
+                            <option>Preferred Consultation Type</option>
+                            <option>Video Call</option>
+                            <option>Phone Call</option>
+                            <option>Text Chat</option>
+                        </select>
+                        <textarea placeholder="Brief Description" class="w-full p-2 bg-yellow-50 rounded border-2 border-yellow-300" rows="4"></textarea>
+                        <button class="w-full bg-yellow-600 text-white py-3 rounded hover:bg-yellow-700 transition">
+                            Request Consultation
+                        </button>
+                    </form>
+                </div>
+
+                <div class="bg-yellow-100 rounded-lg p-6 shadow-md opacity-0 animate-fade">
+                    <h2 class="text-2xl font-semibold text-yellow-900 mb-6">Community Support Groups</h2>
+                    <div class="space-y-4">
+                        <div class="bg-yellow-200 p-4 rounded-lg flex items-center interactive-card">
+                            <div class="w-16 h-16 bg-yellow-300 rounded-full mr-4 flex items-center justify-center">
+                                <span class="text-2xl">🤝</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-yellow-800">Anxiety Support Group</h3>
+                                <p class="text-yellow-700">Weekly Virtual Meetups</p>
+                            </div>
+                        </div>
+                        <div class="bg-yellow-200 p-4 rounded-lg flex items-center interactive-card">
+                            <div class="w-16 h-16 bg-yellow-300 rounded-full mr-4 flex items-center justify-center">
+                                <span class="text-2xl">❤️</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-yellow-800">Depression Recovery Circle</h3>
+                                <p class="text-yellow-700">Bi-Weekly Support Sessions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+      
+        </main>
+
+        <footer class="text-center mt-12 text-yellow-800 opacity-0 animate-fade">
+            <p>© 2024 Wellness Haven By Clearit</p>
+            <p class="text-yellow-700 mt-2">All information is confidential and handled with utmost care</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.animate-fade');
+            fadeElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.3}s`;
+                el.classList.add('opacity-100');
+            });
+
+            document.getElementById('counselor-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you! We will contact you shortly.');
+            });
+
+            // Mood Tracker Interaction
+            const moodButtons = document.querySelectorAll('.grid-cols-7 button');
+            moodButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    moodButtons.forEach(b => b.classList.remove('ring-4', 'ring-yellow-500'));
+                    button.classList.add('ring-4', 'ring-yellow-500');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
