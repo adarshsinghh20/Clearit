@@ -1,4 +1,5 @@
 🔷 Project Name: Clear IT
+
 🔷 Project Type: Career Guidance & Blog Platform (Web-Based)
 🔷 Description:
 Clear IT is an educational and career guidance web application designed to assist students and aspiring professionals in the field of Information Technology (IT). The platform offers a combination of curated blogs, career path suggestions, job readiness resources, and real-time updates, all powered through APIs. It aims to simplify the IT career journey for learners by providing structured information and personalized guidance.
